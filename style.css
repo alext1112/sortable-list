@@ -6,5 +6,12 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  
+  background-color: rgb(99, 39, 39);
+  color: white;
+  margin: 0;
+  height: 100vh;
+}
+
+ul li {
+  list-style-type: none;
 }
