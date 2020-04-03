@@ -1,17 +1,93 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 
+:root {
+  --border-color: #5e6263;
+  --background-color: #e07f66;
+  --text-color: rgb(72, 75, 77);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: rgb(99, 39, 39);
-  color: white;
+  background-color: rgb(210, 180, 140);
   margin: 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-ul li {
+.draggable-list {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0;
   list-style-type: none;
+}
+
+.draggable-list li {
+  background-color: rgb(240, 238, 238);
+  display: flex;
+  flex: 1;
+  font-weight: 700;
+}
+
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.draggable-list .number {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 20px;
+  height: 60px;
+  width: 60px;
+}
+
+.draggable-list li.over .draggable {
+  background-color: #eaeaea;
+}
+
+.draggable-list .song-name {
+  margin: 0 20px 0 0;
+}
+
+.draggable-list li.right .song-name {
+  color: #3ae374;
+}
+
+.draggable-list li.wrong .song-name {
+  color: #ff3838;
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex: 1;
+}
+
+.check-btn {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 0;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:focus {
+  outline: none;
 }
